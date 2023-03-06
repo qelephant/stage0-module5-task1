@@ -59,7 +59,14 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     /**
@@ -72,7 +79,12 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-
+        int len = arr.length;
+        String[] revArr = new String[len];
+        for (int i = 0; i < len; i++) {
+            revArr[i] = arr[len - 1 - i];
+        }
+        return revArr;
     }
 
     /**
@@ -87,8 +99,18 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-
-    }
+        List<Integer> positiveList = new ArrayList<>();
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 0) {
+                    positiveList.add(arr[i]);
+                }
+            }
+            int[] positiveArr = new int[positiveList.size()];
+            for (int i = 0; i < positiveArr.length; i++) {
+                positiveArr[i] = positiveList.get(i);
+            }
+            return positiveArr;
+            }
 
     /**
      * Return a sorted, ragged, two-dimensional int[][] array following these rules:
