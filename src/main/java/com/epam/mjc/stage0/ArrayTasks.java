@@ -99,15 +99,15 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        int[] positiveList = new ArrayList<>();
+        int[] positiveList = new int[arr.length];
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] > 0) {
-                    positiveList.add(arr[i]);
+                    positiveList[i] = arr[i];
                 }
             }
-            int[] positiveArr = new int[positiveList.size()];
+            int[] positiveArr = new int[positiveList.length];
             for (int i = 0; i < positiveArr.length; i++) {
-                positiveArr[i] = positiveList.get(i);
+                positiveArr[i] = positiveList[i];
             }
             return positiveArr;
             }
